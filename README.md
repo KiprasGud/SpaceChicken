@@ -5,8 +5,9 @@
 </div>
 
 
-## 
-[Try the game](https://yourusername.github.io/SpaceChicken)
+<div align="center">
+[Try the game](https://kiprasgud.github.io/SpaceChicken)
+</div>
 
 ## Controls
 * **[Spacebar]** - Flap / Fly up
