@@ -4,10 +4,7 @@
   <img width="800" alt="gameplay-ezgif com-optimize" src="https://github.com/user-attachments/assets/559e6d3d-8f75-4ff9-80de-0aee42766ae5" />
 </div>
 
-
-<div align="center">
 [Try the game](https://kiprasgud.github.io/SpaceChicken)
-</div>
 
 ## Controls
 * **[Spacebar]** - Flap / Fly up
