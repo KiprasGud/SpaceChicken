@@ -6,10 +6,6 @@ export class Start extends Phaser.Scene {
 
     preload() {
         this.load.image('background', 'assets/bg.png');
-        //this.load.image('logo', 'assets/phaser.png');
-
-        //  The ship sprite is CC0 from https://ansimuz.itch.io - check out his other work!
-        //this.load.spritesheet('ship', 'assets/spaceship.png', { frameWidth: 176, frameHeight: 96 });
         this.load.spritesheet('bird', 'assets/chicken.png', {frameWidth: 32, frameHeight: 32});
         this.load.spritesheet('enemyBird', 'assets/chick.png', { frameWidth: 32, frameHeight: 32});
         this.load.image('black', 'assets/space.png');
@@ -25,20 +21,6 @@ export class Start extends Phaser.Scene {
 
         this.background = this.add.tileSprite(576, 240, 384 * 3, 480, 'background');
         this.physics.world.setBounds(0, 0, 1152, 480);
-
-
-        /*
-        this.test = this.physics.add.sprite(50,50,'test').setCollideWorldBounds(true);
-        this.test.anims.create({
-            key: 'mytest',
-            frames: this.anims.generateFrameNumbers('test', {start:0, end: 1}),
-            frameRate: 12,
-            repeat: -1
-        });
-
-        this.test.play('mytest');
-
-         */
 
         this.enemyBird = this.physics.add.group();
 
@@ -78,9 +60,6 @@ export class Start extends Phaser.Scene {
             }
         }
 
-        //const logo = this.add.image(640, 200, 'logo');
-
-        //const ship = this.add.sprite(640, 360, 'ship');
         this.bird = this.physics.add.sprite(576,240, 'bird').setBounce(0.2).setCircle(11, 5, 5).setCollideWorldBounds(true);
         this.bird.setScale(1.5, 1.5);
 
@@ -142,72 +121,7 @@ export class Start extends Phaser.Scene {
             }
         }, null, this);
 
-
-
-
-
-        /*
-        function hitBird(bird, enemyBird) {
-           if (bird.body.touching.down || enemyBird.body.touching.up || enemyBird.body.touching.topRight)
-           {
-            enemy.body.enable = false;
-                this.cameras.main.shake(150, 0.01);
-                this.tweens.add({
-                    targets: enemy,
-                    y: enemy.y - 10,
-                    scaleX: 0,
-                    scaleY: 0,
-                    alpha: 0,
-                    duration: 250,
-                    ease: 'Power1',
-                    onComplete: () => {
-                        enemy.setAlpha(1);
-                        enemy.setScale(1.5, 1.5);
-                        enemy.setPosition(this.originalPosX[this.enemy.indexOf(enemy)], this.originalPosY[this.enemy.indexOf(enemy)]);
-                        if (this.enemy.indexOf(enemy) < 5)
-                        {
-                            enemy.setVelocityX(100);
-                        }
-                        else {
-                            enemy.setVelocityX(-100);
-                        }
-                        enemy.body.enable = true;
-                    }
-                });
-
-                bird.setVelocityY(-280);
-
-                return;
-            }
-           if (enemyBird.body.touching.right || bird.body.touching.right) {
-               this.scene.restart();
-           }
-           if (enemyBird.body.touching.left || bird.body.touching.left) {
-               this.scene.restart();
-           }
-           if (enemyBird.body.touching.down || bird.body.touching.up) {
-               this.scene.restart();
-           }
-        }
-
-         */
-
-
-/*
-        this.tweens.add({
-            targets: logo,
-            y: 400,
-            duration: 1500,
-            ease: 'Sine.inOut',
-            yoyo: true,
-            loop: -1
-        });
-
- */
-
         this.spaceBarPressed = false;
-
-
     }
 
 
